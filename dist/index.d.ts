@@ -1,7 +1,7 @@
 /// <reference types="@dcloudio/types" />
 /// <reference types="@dcloudio/types" />
 type Override<P, S> = Omit<P, keyof S> & S;
-interface UniFetchConfig {
+interface Config {
     /**
      * 自定义加载提示
      */
@@ -18,12 +18,12 @@ interface UniFetchConfig {
      */
     intercept?: {
         request?(options: UniApp.RequestOptions): void;
-        response(result: UniApp.RequestSuccessCallbackResult & {
+        response?(result: UniApp.RequestSuccessCallbackResult & {
             config: UniApp.RequestOptions;
         }): any;
     };
 }
-interface UniFetch<T> {
+interface UniFetch<T = any> {
     /**
      * 自定义加载提示
      */
@@ -75,8 +75,8 @@ interface UniFetch<T> {
         data: U;
     }>>;
 }
-declare function createUniFetch<T = any>(config?: UniFetchConfig): UniFetch<T>;
-export { createUniFetch };
+declare function createUniFetch<T = any>(config?: Config): UniFetch<T>;
+export { UniFetch, createUniFetch };
 declare const _default: UniFetch<{
     code: number;
     message: string;
