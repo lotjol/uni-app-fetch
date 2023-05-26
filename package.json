@@ -1,0 +1,31 @@
+{
+  "name": "uni-app-fetch",
+  "version": "0.0.1",
+  "description": "A network request library for uni-app.",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "uni-app",
+    "miniprogram",
+    "http",
+    "fetch"
+  ],
+  "types": "dist/index.d.ts",
+  "author": "lotjol <botue@sina.com>",
+  "license": "ISC",
+  "repository": "lotjol/uni-app-fetch",
+  "devDependencies": {
+    "@dcloudio/types": "^3.3.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.0",
+    "typescript": "^5.0.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
