@@ -1,7 +1,7 @@
 // 工具类型
 type Override<P, S> = Omit<P, keyof S> & S
 
-interface UniFetchConfig {
+interface Config {
   /**
    * 自定义加载提示
    */
@@ -18,7 +18,7 @@ interface UniFetchConfig {
    */
   intercept?: {
     request?(options: UniApp.RequestOptions): void
-    response(
+    response?(
       result: UniApp.RequestSuccessCallbackResult & {
         config: UniApp.RequestOptions
       }
@@ -26,7 +26,7 @@ interface UniFetchConfig {
   }
 }
 
-interface UniFetch<T> {
+interface UniFetch<T = any> {
   /**
    * 自定义加载提示
    */
@@ -78,7 +78,7 @@ interface UniFetch<T> {
   delete<U>(url: string, data?: object): Promise<Override<T, { data: U }>>
 }
 
-function createUniFetch<T = any>(config?: UniFetchConfig) {
+function createUniFetch<T = any>(config?: Config) {
   // 记录 loading 的状态
   const loadingQueue: string[] = []
   /**
@@ -155,5 +155,5 @@ function createUniFetch<T = any>(config?: UniFetchConfig) {
   return uniFetch
 }
 
-export { createUniFetch }
+export { UniFetch, createUniFetch }
 export default createUniFetch<{ code: number; message: string; data: any }>()
