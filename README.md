@@ -15,7 +15,7 @@ npm install uni-app-fetch --save
 新建 `utils/uni-fetch.ts` 文件，参照如下代码创建实例
 
 ```javascript
-import {createUniFetch} from 'uni-app-fetch'
+import { createUniFetch } from 'uni-app-fetch'
 // Typescript 相关
 interface responseData {
   code: number
@@ -67,12 +67,12 @@ export default uniFetch
      data() {},
      async onLoad() {
        // 用法1
-       const res1 = await uniFetch<{list: string[]}>({
+       const res1 = await uniFetch<{ list: string[] }>({
          url: '/echo',
          data: {}
        })
        // 用法2
-       const res2 = await uniFetch.get<list: string[]>('/echo', {})
+       const res2 = await uniFetch.get<{ list: string[] }>('/echo', {})
      }
    }
 </script>
@@ -107,12 +107,7 @@ export function createApp() {
   const app = createSSRApp(App)
   // 挂到Vue实例中
   app.config.globalProperties.fetch = uniFetch
-  app.use(createPinia())
-<<<<<<< HEAD
   return { app }
-=======
-  return {app}
->>>>>>> 6f3afad8eb065116a5da588818e35266ad9e5718
 }
 ```
 
@@ -120,33 +115,18 @@ export function createApp() {
 
 ```html
 <script>
-  <<<<<<< HEAD
-    export default {
-       data() {},
-       async onLoad() {
-         // 用法1
-         const res1 = await this.fetch<{list: string[]}>({
-           url: '/echo',
-           data: {}
-         })
-         // 用法2
-         const res2 = await this.fetch.get<list: string[]>('/echo', {})
-       }
-     }
-  =======
-  	export default {
-      data() {},
-      async onLoad() {
-        // 用法1
-        const res1 = await this.fetch<{list: string[]}>({
-          url: '/echo',
-          data: {}
-        })
-        // 用法2
-        const res2 = await this.fetch.get<list: string[]>('/echo', {})
-      }
+  export default {
+    data() {},
+    async onLoad() {
+      // 用法1
+      const res1 = await this.fetch<{ list: string[] }>({
+        url: '/echo',
+        data: {}
+      })
+      // 用法2
+      const res2 = await this.fetch.get<{ list: string[] }>('/echo', {})
     }
-  >>>>>>> 6f3afad8eb065116a5da588818e35266ad9e5718
+  }
 </script>
 ```
 
@@ -155,14 +135,13 @@ export function createApp() {
 ```javascript
 // GET 方法请求
 uniFetch.fetch.get<T>(url, data?)
+
 // POST 方法请求
 uniFetch.post<T>(url, data?)
+
 // PUT 方法请求
 uniFetch.put<T>(url, data?)
+
 // DELETE 方法请求
 uniFetch.delete<T>(url, data?)
 ```
-
-# <<<<<<< HEAD
-
-> > > > > > > 6f3afad8eb065116a5da588818e35266ad9e5718
