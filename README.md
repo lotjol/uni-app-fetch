@@ -15,7 +15,11 @@ npm install uni-app-fetch --save
 新建 `utils/uni-fetch.ts` 文件，参照如下代码创建实例
 
 ```javascript
+<<<<<<< HEAD
 import {createUniFetch} from 'uni-app-fetch'
+=======
+import http from 'uni-app-fetch'
+>>>>>>> 6f3afad8eb065116a5da588818e35266ad9e5718
 // Typescript 相关
 interface responseData {
   code: number
@@ -108,7 +112,11 @@ export function createApp() {
   // 挂到Vue实例中
   app.config.globalProperties.fetch = uniFetch
   app.use(createPinia())
+<<<<<<< HEAD
   return { app }
+=======
+  return {app}
+>>>>>>> 6f3afad8eb065116a5da588818e35266ad9e5718
 }
 ```
 
@@ -116,18 +124,33 @@ export function createApp() {
 
 ```html
 <script>
-  export default {
-     data() {},
-     async onLoad() {
-       // 用法1
-       const res1 = await this.fetch<{list: string[]}>({
-         url: '/echo',
-         data: {}
-       })
-       // 用法2
-       const res2 = await this.fetch.get<list: string[]>('/echo', {})
+  <<<<<<< HEAD
+    export default {
+       data() {},
+       async onLoad() {
+         // 用法1
+         const res1 = await this.fetch<{list: string[]}>({
+           url: '/echo',
+           data: {}
+         })
+         // 用法2
+         const res2 = await this.fetch.get<list: string[]>('/echo', {})
+       }
      }
-   }
+  =======
+  	export default {
+      data() {},
+      async onLoad() {
+        // 用法1
+        const res1 = await this.fetch<{list: string[]}>({
+          url: '/echo',
+          data: {}
+        })
+        // 用法2
+        const res2 = await this.fetch.get<list: string[]>('/echo', {})
+      }
+    }
+  >>>>>>> 6f3afad8eb065116a5da588818e35266ad9e5718
 </script>
 ```
 
@@ -143,3 +166,7 @@ uniFetch.put<T>(url, data?)
 // DELETE 方法请求
 uniFetch.delete<T>(url, data?)
 ```
+
+# <<<<<<< HEAD
+
+> > > > > > > 6f3afad8eb065116a5da588818e35266ad9e5718
