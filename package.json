@@ -1,6 +1,6 @@
 {
   "name": "uni-app-fetch",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A network request library for uni-app.",
   "main": "dist/index.js",
   "scripts": {
@@ -21,6 +21,7 @@
   "author": "lotjol <botue@sina.com>",
   "license": "ISC",
   "repository": "lotjol/uni-app-fetch",
+  "homepage": "https://github.com/lotjol/uni-app-fetch#readme",
   "devDependencies": {
     "@dcloudio/types": "^3.3.3",
     "cz-conventional-changelog": "^3.3.0",
