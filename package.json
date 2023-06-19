@@ -1,6 +1,6 @@
 {
   "name": "uni-app-fetch",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A network request library for uni-app.",
   "main": "dist/index.js",
   "scripts": {

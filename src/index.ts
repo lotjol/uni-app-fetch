@@ -111,7 +111,7 @@ function createUniFetch<T = any>(config?: Config) {
           // 调用响应拦截器
           resolve(uniFetch.intercept.response({ ...result, config: options }))
         },
-        fail: () => reject,
+        fail: reject,
         complete: () => {
           // 记录结束的请求数量
           loadingQueue.pop()

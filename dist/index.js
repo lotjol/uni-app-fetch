@@ -28,7 +28,7 @@ function createUniFetch(config) {
             uni.request(Object.assign(Object.assign({}, options), { success: (result) => {
                     // 调用响应拦截器
                     resolve(uniFetch.intercept.response(Object.assign(Object.assign({}, result), { config: options })));
-                }, fail: () => reject, complete: () => {
+                }, fail: reject, complete: () => {
                     // 记录结束的请求数量
                     loadingQueue.pop();
                     // 关闭加载提示框
